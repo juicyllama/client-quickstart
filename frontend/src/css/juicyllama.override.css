@@ -1,0 +1,13 @@
+.JLUserMenu .Header {
+    background: var(--q-primary) !important;
+    color:  var(--q-dark) ;
+}
+
+.q-list--dark JLMenu i{
+    color: var(--q-primary);
+}
+
+.JLButton{
+    background: var(--q-primary);
+    color: var(--q-dark);
+}

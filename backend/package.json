@@ -1,0 +1,58 @@
+{
+  "name": "@juicyllama/client-quickstart-backend",
+  "description": "A quickstart for a client project",
+  "author": {
+    "name": "JuicyLlama Studio",
+    "email": "studio@juicyllama.com",
+    "url": "https://juicyllama.com"
+},
+"repository": {
+    "type": "git",
+    "url": "https://github.com/juicyllama/client-quickstart"
+},
+"bugs": "https://github.com/juicyllama/client-quickstart",
+"private": false,
+"license": "BSD-4-Clause",
+  "scripts": {
+    "build": "nest build",
+    "start": "nest start",
+    "start:dev": "nest start --watch",
+    "start:docker:build": "docker-compose --project-name juicyllama up --build --detach",
+    "link": "sh ./pnpm-link.sh"
+  },
+  "dependencies": {
+    "@juicyllama/core": "latest"
+  },
+  "devDependencies": {
+    "@juicyllama/dev": "latest"
+  },
+  "jl": {
+		"project_name": "quickstart",
+		"apps": [
+			{
+				"name": "api",
+				"domain": "local.api.qs.juicyllama.com",
+				"ssl": "apps/api/src/assets",
+				"port": 443
+			}
+		],
+		"docker": true
+	},
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".*\\.spec\\.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "**/*.(t|j)s"
+    ],
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  }
+}

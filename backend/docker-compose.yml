@@ -1,41 +1,41 @@
 version: "3.9"
 services:
-    juicyllama-mysql:
+    jl-quickstart-mysql:
         image: mysql:8.0
-        container_name: juicyllama-mysql
+        container_name: jl-quickstart-mysql
         ports:
             - "3306:3306"
         environment:
             MYSQL_ROOT_PASSWORD: localhost
-            MYSQL_DATABASE: juicyllama
+            MYSQL_DATABASE: jl_quickstart
         command: --init-file /mysql/init.sql
         volumes:
             - ./.docker/setup.sql:/mysql/init.sql
         networks:
-            - juicyllama-network
-    juicyllama-redis:
+            - jl-quickstart-network
+    jl-quickstart-redis:
         image: redis:6.2.5
-        container_name: juicyllama-redis
+        container_name: jl-quickstart-redis
         ports:
             - "6379:6379"
         networks:
-            - juicyllama-network
-    juicyllama-mongodb:
+            - jl-quickstart-network
+    jl-quickstart-mongodb:
         image: mongo:latest
-        container_name: juicyllama-mongodb
+        container_name: jl-quickstart-mongodb
         ports:
             - "27017:27017"
         networks:
-            - juicyllama-network
-    juicyllama-rabbitmq:
+            - jl-quickstart-network
+    jl-quickstart-rabbitmq:
         image: rabbitmq:3.8.9-management
-        container_name: juicyllama-rabbitmq
+        container_name: jl-quickstart-rabbitmq
         ports:
             - "5672:5672"
             - "15672:15672"
         networks:
-            - juicyllama-network
+            - jl-quickstart-network
 networks:
-    juicyllama-network:
+    jl-quickstart-network:
         driver: bridge
-        name: juicyllama-network
+        name: jl-quickstart-network

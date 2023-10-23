@@ -4,20 +4,13 @@
   </a>
 </div>
 
+# BUQ
+
+This repo contains all the source code for our client BUQ.
+
 ### Install
+Please ensure you have the [JuicyLlama framework](https://docs.juicyllama.com/) installed and then run `pnpm run install:framework`
 
-```
-pnpm i --shamefully-hoise
-pnpm run start:docker:build
-```
-
-### Running the app
-
-```
-pnpm run start:dev
-```
-
-### Further Reading
-
-Visit the [JuicyLlama Docs Portal](https://docs.juicyllama.com/#installation) more information.
+### Status
+Uptime monitoring can be found [here](https://status.sentinel.buquw.com/) 
 

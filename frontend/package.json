@@ -1,0 +1,38 @@
+{
+	"name": "@juicyllama/juicyllama-portal-frontend",
+	"version": "0.0.27",
+	"private": true,
+	"scripts": {
+		"link": "sh ./pnpm-link.sh",
+		"start:dev": "quasar dev",
+		"build": "quasar build",
+		"format": "prettier --write \"src/**/*.ts\"",
+		"lint": "eslint --ext .js,.ts,.vue ./"
+	},
+	"dependencies": {
+		"@juicyllama/frontend-core": "latest"
+	},
+	"devDependencies": {
+		"@juicyllama/vue-dev": "latest"
+	},
+	"resolutions": {
+		"vite": "^4.0.0",
+		"@vitejs/plugin-vue": "^4.0.0"
+	},
+	"engines": {
+		"node": ">= 16",
+		"npm": ">= 6.13.4"
+	},
+	"jl": {
+		"project_name": "quickstart",
+		"apps": [
+			{
+				"name": "app",
+				"domain": "local.app.qs.juicyllama.com",
+				"ssl": "/",
+				"port": 8080
+			}
+		],
+		"docker": false
+	}
+}
