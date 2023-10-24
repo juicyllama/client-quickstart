@@ -1,7 +1,3 @@
-#SSL
-local.app.qs.juicyllama.com.pem
-local.app.qs.juicyllama.com-key.pem
-
 # Quasar core related directories
 .quasar
 

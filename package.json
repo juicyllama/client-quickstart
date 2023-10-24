@@ -14,7 +14,7 @@
 	"private": false,
 	"license": "BSD-4-Clause",
     "scripts": {
-        "install:client": "sh ./backend/client-install.sh && cd .. && sh ./frontend/client-install.sh",
+        "install:client": "sh ./backend/client-install.sh && sh ./frontend/client-install.sh",
         "install:client:backend": "sh ./backend/client-install.sh",
         "install:client:frontend": "sh ./frontend/client-install.sh"
     }

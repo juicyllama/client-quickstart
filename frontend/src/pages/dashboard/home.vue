@@ -1,11 +1,6 @@
 <script setup lang="ts">
-	import { AuthHook, userStore } from '@juicyllama/frontend-core'
-	import { identifyLogrocket } from '@/plugins/logrocket'
-	import { identifyBugsnag } from '@/plugins/bugsnag'
-
+	import { AuthHook } from '@juicyllama/frontend-core'
 	AuthHook()
-	identifyLogrocket(userStore.user)
-	identifyBugsnag(userStore.user)
 </script>
 
 <template>

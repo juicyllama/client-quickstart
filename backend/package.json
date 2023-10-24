@@ -17,13 +17,15 @@
     "build": "nest build",
     "start": "nest start",
     "start:dev": "nest start --watch",
-    "start:docker:build": "docker-compose --project-name juicyllama up --build --detach",
+    "start:docker:build": "docker-compose --project-name jq-quickstart up --build --detach",
     "link": "sh ./pnpm-link.sh"
   },
   "dependencies": {
-    "@juicyllama/core": "latest"
+    "@juicyllama/core": "latest",
+    "@juicyllama/nestjs-redoc": "latest"
   },
   "devDependencies": {
+    "@juicyllama/cli": "latest",
     "@juicyllama/dev": "latest"
   },
   "jl": {
@@ -32,11 +34,11 @@
 			{
 				"name": "api",
 				"domain": "local.api.qs.juicyllama.com",
-				"ssl": "apps/api/src/assets",
+				"ssl": "src/assets",
 				"port": 443
 			}
 		],
-		"docker": true
+		"docker": "jq-quickstart"
 	},
   "jest": {
     "moduleFileExtensions": [

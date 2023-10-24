@@ -13,6 +13,7 @@
 		"@juicyllama/frontend-core": "latest"
 	},
 	"devDependencies": {
+		"@juicyllama/cli": "latest",
 		"@juicyllama/vue-dev": "latest"
 	},
 	"resolutions": {
@@ -29,7 +30,7 @@
 			{
 				"name": "app",
 				"domain": "local.app.qs.juicyllama.com",
-				"ssl": "/",
+				"ssl": "./",
 				"port": 8080
 			}
 		],

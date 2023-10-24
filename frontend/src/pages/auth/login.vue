@@ -1,10 +1,5 @@
 <script lang="ts" setup>
 import { JLLogin } from '@juicyllama/frontend-core'
-
-const google = Boolean(import.meta.env.VITE_SSO_GOOGLE)
-const facebook = Boolean(import.meta.env.VITE_SSO_FACEBOOK)
-const linkedin = Boolean(import.meta.env.VITE_SSO_LINKEDIN)
-
 </script>
 
 <template>
@@ -15,7 +10,7 @@ const linkedin = Boolean(import.meta.env.VITE_SSO_LINKEDIN)
 					<q-card square class="auth-card">
 						<q-card-section class="bg-primary"></q-card-section>
 						<q-card-section>
-							<JLLogin :google='google' :facebook='facebook' :linkedin='linkedin'></JLLogin>
+							<JLLogin></JLLogin>
 						</q-card-section>
 					</q-card>
 				</div>
