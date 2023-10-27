@@ -3,11 +3,21 @@
     "setupTasks": [{
         "name": "install pnpm",
         "command": "npm i pnpm -g"
-    }],
+    },
+{
+        "name": "install:client",
+        "command": "pnpm install:client",
+}],
     "tasks": {
-        "install": {
-            "name": "install:client",
-            "command": "pnpm install:client"
+        "start backend": {
+            "name": "start:backend",
+            "command": "cd backend && pnpm start:dev",
+            "runAtStart": true
+        },
+        "start frontend": {
+            "name": "start:frontend",
+            "command": "cd frontend && pnpm start:dev",
+            "runAtStart": true
         }
     }
 }
