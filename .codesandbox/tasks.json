@@ -1,0 +1,13 @@
+{
+    "$schema": "https://codesandbox.io/schemas/tasks.json",
+    "setupTasks": [{
+        "name": "install pnpm",
+        "command": "npm i pnpm -g"
+    }],
+    "tasks": {
+        "install": {
+            "name": "install:client",
+            "command": "pnpm install:client"
+        }
+    }
+}
