@@ -1,23 +1,33 @@
 {
-    "$schema": "https://codesandbox.io/schemas/tasks.json",
-    "setupTasks": [{
-        "name": "install pnpm",
-        "command": "npm i pnpm -g"
+  // These tasks will run in order when initializing your CodeSandbox project.
+  "setupTasks": [
+    {
+      "command": "npm i pnpm -g",
+      "name": "install pnpm"
     },
-{
-        "name": "install:client",
-        "command": "pnpm install:client",
-}],
-    "tasks": {
-        "start backend": {
-            "name": "start:backend",
-            "command": "cd backend && pnpm start:dev",
-            "runAtStart": true
-        },
-        "start frontend": {
-            "name": "start:frontend",
-            "command": "cd frontend && pnpm start:dev",
-            "runAtStart": true
-        }
+    {
+      "command": "pnpm install:client",
+      "name": "install:client"
+    },
+    {
+        "command": "cd backend && pnpm run start:dev",
+        "name": "start backend"
+    },
+    {
+        "command": "cd frontend && pnpm run start:dev",
+        "name": "start frontend"
+    },
+    {
+        "command": "curl --location 'https://local.api.qs.juicyllama.com/account' \
+        --header 'Content-Type: application/json' \
+        --data-raw '{
+            "account_name": "Example",
+            "owners_email": "example@example.com",
+            "owners_password": "E$@mp7&Own3er",
+            "owners_first_name": "Example",
+            "owners_last_name": "Owner"
+        }'",
+        "name": "setup account"
     }
+  ]
 }
