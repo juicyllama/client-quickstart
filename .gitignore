@@ -3,7 +3,7 @@ dist
 node_modules
 
 # ENV
-.env
+#.env - disabled for quickstart but you should uncomment this line in production
 
 #SSL
 **/*.pem

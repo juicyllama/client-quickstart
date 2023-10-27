@@ -16,18 +16,6 @@
     {
         "command": "cd frontend && pnpm run start:dev",
         "name": "start frontend"
-    },
-    {
-        "command": "curl --location 'https://local.api.qs.juicyllama.com/account' \
-        --header 'Content-Type: application/json' \
-        --data-raw '{
-            "account_name": "Example",
-            "owners_email": "example@example.com",
-            "owners_password": "E$@mp7&Own3er",
-            "owners_first_name": "Example",
-            "owners_last_name": "Owner"
-        }'",
-        "name": "setup account"
     }
   ]
 }
