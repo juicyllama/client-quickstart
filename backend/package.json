@@ -21,14 +21,9 @@
     "link": "sh ./pnpm-link.sh"
   },
   "dependencies": {
-    "@juicyllama/core": "latest"
-  },
-  "devDependencies": {
     "@juicyllama/cli": "latest",
+    "@juicyllama/core": "latest",
     "@juicyllama/dev": "latest"
-  },
-  "paths": {
-    "@juicyllama/**/@nestjs/*": "@nestjs/*"
   },
   "jl": {
 		"project_name": "quickstart",
