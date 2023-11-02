@@ -3,12 +3,11 @@ import { NestFactory } from '@nestjs/core'
 import { AppModule } from './app.module'
 import { ValidationPipe } from '@nestjs/common'
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger'
-import { redocConfig, TypeOrmFilter, validationPipeOptions } from '@juicyllama/core'
+import { redocConfig, TypeOrmFilter, validationPipeOptions, RedocModule } from '@juicyllama/core'
 import * as fs from 'fs'
 import { join } from 'path'
 import 'reflect-metadata'
 import { Env, Enviroment, Logger, Strings } from '@juicyllama/utils'
-import { RedocModule } from '@juicyllama/nestjs-redoc'
 import { ANIMALS_NAME } from './modules/animals/animals.constants'
 
 async function bootstrap() {

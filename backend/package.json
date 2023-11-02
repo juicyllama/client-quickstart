@@ -25,6 +25,11 @@
     "@juicyllama/core": "latest",
     "@juicyllama/dev": "latest"
   },
+  "paths": {
+    "@nestjs/*": [
+      "./node_modules/@juicyllama/core/node_modules/@nestjs/*"
+    ]
+  },
   "jl": {
 		"project_name": "quickstart",
 		"apps": [

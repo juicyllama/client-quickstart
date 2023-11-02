@@ -40,7 +40,10 @@ export class AnimalsController {
 		@Inject(forwardRef(() => TQuery)) private readonly tQuery: TQuery<ANIMALS_T>,
 	) {}
 
-	@CreateDecorator(ANIMALS_E, ANIMALS_NAME)
+	@CreateDecorator({
+		entity: ANIMALS_E, 
+		name: ANIMALS_NAME
+	})
 	async create(@Body() data: CreateAnimalDto): Promise<ANIMALS_T> {
     	return await crudCreate<ANIMALS_T>({
         	service: this.service,
@@ -48,7 +51,13 @@ export class AnimalsController {
 		})
 	}
 
-	@ReadManyDecorator(ANIMALS_E, AnimalsSelect, AnimalsOrderBy, AnimalsRelations, ANIMALS_NAME)
+	@ReadManyDecorator({
+		entity: ANIMALS_E, 
+		selectEnum: AnimalsSelect, 
+		orderByEnum: AnimalsOrderBy, 
+		relationsEnum: AnimalsRelations, 
+		name: ANIMALS_NAME
+	})
 	async findAll(@Query() query): Promise<ANIMALS_T[]> {
 		return await crudFindAll<ANIMALS_T>({
 			service: this.service,
@@ -59,7 +68,13 @@ export class AnimalsController {
 		})
 	}
 
-	@ReadOneDecorator(ANIMALS_E, ANIMALS_PRIMARY_KEY, AnimalsSelect, AnimalsRelations, ANIMALS_NAME)
+	@ReadOneDecorator({
+		entity: ANIMALS_E, 
+		primaryKey: ANIMALS_PRIMARY_KEY, 
+		selectEnum: AnimalsSelect, 
+		relationsEnum: AnimalsRelations,
+		name: ANIMALS_NAME
+	})
 	async findOne(@Param() params, @Query() query): Promise<ANIMALS_T> {
 		return await crudFindOne<ANIMALS_T>({
 			service: this.service,
@@ -68,7 +83,9 @@ export class AnimalsController {
 		})
 	}
 
-	@ReadStatsDecorator(ANIMALS_NAME)
+	@ReadStatsDecorator({
+		name: ANIMALS_NAME
+	})
 		async stats(
 			@Query() query,
 			@Query('method') method?: StatsMethods,
@@ -82,7 +99,11 @@ export class AnimalsController {
 			})
 		}
 
-	@ReadChartsDecorator(ANIMALS_E, AnimalsSelect, ANIMALS_NAME)
+	@ReadChartsDecorator({
+		entity: ANIMALS_E, 
+		selectEnum: AnimalsSelect, 
+		name: ANIMALS_NAME
+	})
 	async charts(
 		@Query() query: any,
 		@Query('search') search: string,
@@ -104,7 +125,11 @@ export class AnimalsController {
 		})
 	}
 
-	@UpdateDecorator(ANIMALS_E, ANIMALS_NAME)
+	@UpdateDecorator({
+		entity: ANIMALS_E, 
+		primaryKey: ANIMALS_PRIMARY_KEY,
+		name: ANIMALS_NAME
+	})
 	async update(@Param() params, @Body() data: UpdateAnimalDto): Promise<ANIMALS_T> {
 		return await crudUpdate<ANIMALS_T>({
 			service: this.service,
@@ -113,7 +138,11 @@ export class AnimalsController {
 		})
 	}
 
-	@DeleteDecorator(ANIMALS_E, ANIMALS_NAME)
+	@DeleteDecorator({
+		entity: ANIMALS_E, 
+		primaryKey: ANIMALS_PRIMARY_KEY,
+		name: ANIMALS_NAME
+	})
 	async delete(@Param() params): Promise<ANIMALS_T> {
 		return await crudDelete<ANIMALS_T>({
 			service: this.service,
