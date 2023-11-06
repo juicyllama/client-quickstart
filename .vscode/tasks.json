@@ -1,0 +1,53 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Start Docker",
+            "type": "shell",
+            "command": "cd backend && pnpm run start:docker",
+            "windows": {
+                "command": "cd backend && pnpm run start:dev"
+            },
+            "group": "none",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "runOptions": {
+                "runOn": "folderOpen",
+            }
+        },
+        {
+            "label": "Start Backend",
+            "type": "shell",
+            "command": "cd backend && pnpm run start:dev:api",
+            "windows": {
+                "command": "cd backend && pnpm run start:dev"
+            },
+            "group": "none",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "runOptions": {
+                "runOn": "folderOpen",
+            }
+        },
+        {
+            "label": "Start Frontend",
+            "type": "shell",
+            "command": "cd frontend && pnpm run start:dev",
+            "windows": {
+                "command": "cd frontend && pnpm run start:dev"
+            },
+            "group": "none",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "runOptions": {
+                "runOn": "folderOpen",
+            }
+        }
+    ]
+}
