@@ -6,7 +6,7 @@
             "type": "shell",
             "command": "cd backend && pnpm run start:docker",
             "windows": {
-                "command": "cd backend && pnpm run start:dev"
+                "command": "cd backend && pnpm run start:docker"
             },
             "group": "none",
             "presentation": {
@@ -18,9 +18,9 @@
             }
         },
         {
-            "label": "Start Backend",
+            "label": "Running Backend",
             "type": "shell",
-            "command": "cd backend && pnpm run start:dev:api",
+            "command": "cd backend && pnpm run start:dev",
             "windows": {
                 "command": "cd backend && pnpm run start:dev"
             },
@@ -34,7 +34,7 @@
             }
         },
         {
-            "label": "Start Frontend",
+            "label": "Running Frontend",
             "type": "shell",
             "command": "cd frontend && pnpm run start:dev",
             "windows": {
