@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { AuthHook, goToAdminUsers, goToEditAccount } from '@juicyllama/frontend-core'
+import { goToAdminUsers, goToEditAccount } from '@juicyllama/frontend-core'
 import { useRouter } from 'vue-router'
-AuthHook()
+
 const router = useRouter()
 const goEditAccount = () => goToEditAccount(router)
 const goAdminUsers = () => goToAdminUsers(router)

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Ref, ref, computed, watch, onMounted } from 'vue'
+import { Ref, ref, computed, watch } from 'vue'
 import {
 	JLAccountSwitcher,
 	JLUserAvatar,
@@ -13,20 +13,19 @@ import {
 	UserAvatarOptions,
 	Menu,
 } from '@juicyllama/frontend-core'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { MainMenu } from '@/layouts/main_menu'
 
-AuthHook()
+const route = useRoute()
+const router = useRouter()
 
-onMounted(() => {
-	GlobalSubscriptionHook(process.env)
-})
+await AuthHook(router, route)
 
 const currentRoute = computed(() => {
 	return useRoute().name
 })
 
-const isAdmin = userStore.isAdmin(accountStore.getAccountId)
+const isAdmin = userStore.isAdmin(router, route, accountStore.getAccountId)
 
 const userAvatarSettings = <UserAvatarOptions>{
 	clickToMenu: true,
@@ -66,6 +65,9 @@ watch(
 const menu: Menu = {
 	items: MainMenu,
 }
+
+GlobalSubscriptionHook(process.env)
+
 </script>
 
 <template>

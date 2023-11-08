@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { JLUsersTable, goToAdmin, AuthHook } from '@juicyllama/frontend-core'
+import { JLUsersTable, goToAdmin } from '@juicyllama/frontend-core'
 import { useRouter } from 'vue-router'
-AuthHook()
+
 const router = useRouter()
 const goAdmin = () => goToAdmin(router)
 </script>

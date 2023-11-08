@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import { goToDashboard, JLUserProfile, AuthHook } from '@juicyllama/frontend-core'
+import { goToDashboard, JLUserProfile } from '@juicyllama/frontend-core'
+
 import { useRouter } from 'vue-router'
 const router = useRouter()
 const goDashboard = () => goToDashboard(router)
-AuthHook()
 </script>
 
 <template>
