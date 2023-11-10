@@ -9,6 +9,7 @@ import {
 	databaseConfig,
 	jwtConfig,
 	mongodbConfig,
+	systemConfig,
 	Query,
 } from '@juicyllama/core'
 import { Api, Logger, Poll, Env } from '@juicyllama/utils'
@@ -21,7 +22,7 @@ import { AnimalsModule } from './modules/animals/animals.module'
 	imports: [
 		JwtModule.register(jwtConfig()),
 		ConfigModule.forRoot({
-			load: [databaseConfig, jwtConfig, cacheConfig],
+			load: [systemConfig, databaseConfig, jwtConfig, cacheConfig],
 			isGlobal: true,
 			envFilePath: '.env'
 		}),
