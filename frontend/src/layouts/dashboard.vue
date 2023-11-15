@@ -15,6 +15,7 @@ import {
 } from '@juicyllama/frontend-core'
 import { useRoute, useRouter } from 'vue-router'
 import { MainMenu } from '@/layouts/main_menu'
+import { iconSettings } from '@/config/icons'
 
 const route = useRoute()
 const router = useRouter()
@@ -43,9 +44,7 @@ const userAvatarSettings = <UserAvatarOptions>{
 			size: '48px',
 			text_color: 'white',
 		},
-		icon: {
-			type: 'fa-thin',
-		},
+		icon: iconSettings,
 	},
 }
 

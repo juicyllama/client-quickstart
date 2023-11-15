@@ -1,12 +1,20 @@
 import { IconSettings } from '@juicyllama/frontend-core'
 
 export const iconSettings: IconSettings = {
-	type: 'fa-duotone',
+	type: '',
 	icons: {
-		add: 'fa-square-plus',
-		edit: 'fa-pen',
-		delete: 'fa-trash',
-		search: 'fa-magnifying-glass',
-		columns: 'fa-line-columns',
+		add: 'add',
+		edit: 'edit',
+		delete: 'delete',
+		search: 'search',
+		columns: 'view_week',
+		profile: 'account_circle',
+		users: 'people',
+		billing: 'credit_card',
+		admin: 'settings',
+		settings: 'settings',
+		home: 'house',
+		menu_seperator: 'chevron_right',
+
 	},
 }
