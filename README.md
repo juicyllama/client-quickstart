@@ -6,7 +6,7 @@
 
 # Client Quickstart
 
-This repo contains all the source code for our client BUQ.
+This repo contains all the source code for our client quickstart app.
 
 ### Install
 Please ensure you have the [JuicyLlama framework](https://docs.juicyllama.com/) installed and then run `pnpm run install:framework`
