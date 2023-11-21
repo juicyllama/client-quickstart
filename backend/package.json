@@ -37,7 +37,7 @@
 				"name": "api",
 				"domain": "local.api.qs.juicyllama.com",
 				"ssl": "src/assets",
-				"port": 443
+				"port": 4443
 			}
 		],
 		"docker": "jq-quickstart"

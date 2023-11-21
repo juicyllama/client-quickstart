@@ -73,7 +73,7 @@ GlobalSubscriptionHook(process.env)
 	<q-layout view="lhh lpR lfr">
 		<q-header class="q-pa-md">
 			<q-toolbar>
-				<q-btn flat icon="fa-duotone fa-bars" @click="toggleLeftDrawer" v-if="!leftDrawerOpen" />
+				<q-btn flat :icon="iconSettings?.icons?.mobile_nav ? `${iconSettings?.type} ${iconSettings?.icons?.mobile_nav}` : 'menu'" @click="toggleLeftDrawer" v-if="!leftDrawerOpen" />
 
 				<span class="text-h6 q-ml-md">{{ currentRoute }}</span>
 
