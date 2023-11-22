@@ -4,41 +4,18 @@ import { AppModule } from './app.module'
 import { ValidationPipe } from '@nestjs/common'
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger'
 import { redocConfig, TypeOrmFilter, validationPipeOptions, RedocModule } from '@juicyllama/core'
-import * as fs from 'fs'
-import { join } from 'path'
 import 'reflect-metadata'
-import { Env, Enviroment, Logger, Strings } from '@juicyllama/utils'
+import { Env, Logger, Strings } from '@juicyllama/utils'
 import { ANIMALS_NAME } from './modules/animals/animals.constants'
 
 async function bootstrap() {
-	let app
 
 	const domain = 'apps::api::bootstrap'
 
-	switch (Env.get()) {
-		case Enviroment.development:
-			const httpsOptions = {
-				key: fs.readFileSync(
-					join(__dirname, 'assets', `${process.env.BASE_URL_API.replace('https://', '')}-key.pem`),
-				),
-				cert: fs.readFileSync(
-					join(__dirname, 'assets', `${process.env.BASE_URL_API.replace('https://', '')}.pem`),
-				),
-			}
-			app = await NestFactory.create(AppModule, {
-				logger: new Logger(),
-				httpsOptions: httpsOptions,
-				cors: true,
-			})
-			break
-
-		default:
-			app = await NestFactory.create(AppModule, {
-				logger: new Logger(),
-				cors: true,
-			})
-			break
-	}
+	const app = await NestFactory.create(AppModule, {
+		logger: new Logger(),
+		cors: true,
+	})
 
 	const logger = new Logger()
 
@@ -54,7 +31,7 @@ async function bootstrap() {
 			.addBearerAuth()
 			.build()
 
-		const document = SwaggerModule.createDocument(app, swagger_document)
+		const document = SwaggerModule.createDocument(<any>app, swagger_document)
 		let redoc = redocConfig
 
 		const group = 'Animals'
@@ -65,7 +42,7 @@ async function bootstrap() {
 			tags: tags,
 		})
 
-		await RedocModule.setup('', app, document, redoc)
+		await RedocModule.setup('', <any>app, document, redoc)
 	} catch (e) {
 		logger.error(`[${domain}] ${e.message}`, e)
 	}
@@ -78,7 +55,7 @@ async function bootstrap() {
 	}
 
 	app.listen(port)
-	logger.debug(`[${domain}]${Env.get()} server running: ${process.env.BASE_URL_API}:${port}`)
+	logger.debug(`[${domain}]${Env.get()} server running: ${process.env.BASE_URL_API}`)
 }
 
 bootstrap()

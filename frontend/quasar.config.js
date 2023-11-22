@@ -1,10 +1,9 @@
 /* eslint-env node */
 const { configure } = require('quasar/wrappers')
-const fs = require('fs')
 
 require('dotenv').config()
 
-module.exports = configure(function (/* ctx */) {
+module.exports = configure(function ( ctx ) {
 	return {
 		eslint: {
 			warnings: true,
@@ -52,18 +51,11 @@ module.exports = configure(function (/* ctx */) {
 			},
 		},
 
-		devServer:
-			process.env.NODE_ENV !== 'production'
-				? {
-						host: process.env.VITE_APP_URL,
-						// @ts-ignore
-						port: +process.env.VITE_APP_PORT,
-						https: {
-							key: fs.readFileSync(`./${process.env.VITE_APP_URL}-key.pem`),
-							cert: fs.readFileSync(`./${process.env.VITE_APP_URL}.pem`),
-						},
-				  }
-				: { host: process.env.VITE_APP_URL },
+		devServer: {
+			port: ctx.mode.spa
+			? process.env.VITE_APP_PORT ?? 8000
+			: (ctx.mode.pwa ? 9000 : 9090),
+ 		},
 
 		framework: {
 			iconSet: 'fontawesome-v6',

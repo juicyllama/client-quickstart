@@ -1,62 +1,32 @@
 {
-  "name": "@juicyllama/client-quickstart-backend",
-  "description": "A quickstart for a client project",
-  "author": {
-    "name": "JuicyLlama Studio",
-    "email": "studio@juicyllama.com",
-    "url": "https://juicyllama.com"
-},
-"repository": {
-    "type": "git",
-    "url": "https://github.com/juicyllama/client-quickstart"
-},
-"bugs": "https://github.com/juicyllama/client-quickstart",
-"private": false,
-"license": "BSD-4-Clause",
-  "scripts": {
-    "build": "nest build",
-    "start": "nest start",
-    "start:dev": "nest start --watch",
-    "start:docker": "sh ./start-docker.sh",
-    "link": "sh ./pnpm-link.sh"
-  },
-  "dependencies": {
-    "@juicyllama/cli": "latest",
-    "@juicyllama/core": "latest",
-    "@juicyllama/dev": "latest"
-  },
-  "paths": {
-    "@nestjs/*": [
-      "./node_modules/@juicyllama/core/node_modules/@nestjs/*"
-    ]
-  },
-  "jl": {
-		"project_name": "quickstart",
-		"apps": [
-			{
-				"name": "api",
-				"domain": "local.api.qs.juicyllama.com",
-				"ssl": "src/assets",
-				"port": 4443
-			}
-		],
-		"docker": "jq-quickstart"
+	"name": "@juicyllama/client-quickstart-backend",
+	"description": "A quickstart for a client project",
+	"author": {
+		"name": "JuicyLlama Studio",
+		"email": "studio@juicyllama.com",
+		"url": "https://juicyllama.com"
 	},
-  "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "json",
-      "ts"
-    ],
-    "rootDir": "src",
-    "testRegex": ".*\\.spec\\.ts$",
-    "transform": {
-      "^.+\\.(t|j)s$": "ts-jest"
-    },
-    "collectCoverageFrom": [
-      "**/*.(t|j)s"
-    ],
-    "coverageDirectory": "../coverage",
-    "testEnvironment": "node"
-  }
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/juicyllama/client-quickstart"
+	},
+	"bugs": "https://github.com/juicyllama/client-quickstart",
+	"private": false,
+	"license": "BSD-4-Clause",
+	"scripts": {
+		"build": "nest build",
+		"start": "nest start",
+		"start:dev": "nest start --watch",
+		"start:docker": "sh ./start-docker.sh",
+		"link": "sh ./pnpm-link.sh"
+	},
+	"dependencies": {
+		"@juicyllama/cli": "latest",
+		"@juicyllama/core": "latest",
+		"@juicyllama/dev": "latest"
+	},
+	"jl": {
+		"project_name": "quickstart",
+		"docker": "jq-quickstart"
+	}
 }

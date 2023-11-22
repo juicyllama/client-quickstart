@@ -26,14 +26,7 @@
 	},
 	"jl": {
 		"project_name": "quickstart",
-		"apps": [
-			{
-				"name": "app",
-				"domain": "local.app.qs.juicyllama.com",
-				"ssl": "./",
-				"port": 8080
-			}
-		],
+		"apps": [],
 		"docker": false
 	}
 }
