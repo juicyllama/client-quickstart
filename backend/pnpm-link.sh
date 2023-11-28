@@ -4,6 +4,7 @@ pnpm link --global @juicyllama/dev
 pnpm link --global @juicyllama/core
 pnpm link --global @juicyllama/utils
 
-# NestJS
+# NestJS DI
 pnpm link --global @nestjs/core
 pnpm link --global @nestjs/typeorm
+pnpm link --global typeorm
