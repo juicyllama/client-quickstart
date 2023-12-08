@@ -10,10 +10,8 @@
 		"lint": "eslint --ext .js,.ts,.vue ./"
 	},
 	"dependencies": {
-		"@juicyllama/frontend-core": "latest"
-	},
-	"devDependencies": {
 		"@juicyllama/cli": "latest",
+		"@juicyllama/frontend-core": "latest",
 		"@juicyllama/vue-dev": "latest"
 	},
 	"resolutions": {
