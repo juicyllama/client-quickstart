@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
     --q-grey-2: #f5f5f5;
     --q-grey-8: #616161;
