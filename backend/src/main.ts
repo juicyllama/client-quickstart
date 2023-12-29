@@ -9,7 +9,6 @@ import { Env, Logger, Strings } from '@juicyllama/utils'
 import { ANIMALS_NAME } from './modules/animals/animals.constants'
 
 async function bootstrap() {
-
 	const domain = 'apps::api::bootstrap'
 
 	const app = await NestFactory.create(AppModule, {
@@ -32,7 +31,7 @@ async function bootstrap() {
 			.build()
 
 		const document = SwaggerModule.createDocument(<any>app, swagger_document)
-		let redoc = redocConfig
+		const redoc = redocConfig
 
 		const group = 'Animals'
 		const tags = [Strings.capitalize(ANIMALS_NAME)]

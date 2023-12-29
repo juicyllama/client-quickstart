@@ -5,7 +5,6 @@ import { AnimalType } from './animals.enums'
 
 @Entity('animals')
 export class Animal extends BaseEntity {
-
 	@PrimaryGeneratedColumn()
 	@IsNumber()
 	readonly animal_id: number
@@ -15,16 +14,16 @@ export class Animal extends BaseEntity {
 	name: string
 
 	@Column()
-    @IsEnum(AnimalType)
-    type: AnimalType
+	@IsEnum(AnimalType)
+	type: AnimalType
 
-    @ManyToOne(() => User, user => user.user_id, {
-		onDelete: 'SET NULL'
+	@ManyToOne(() => User, user => user.user_id, {
+		onDelete: 'SET NULL',
 	})
 	@JoinColumn({ name: 'user_id' })
 	owner?: User
 
-    @Column()
+	@Column()
 	@IsNumber()
 	owner_id: number
 

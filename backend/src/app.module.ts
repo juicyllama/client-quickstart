@@ -23,7 +23,7 @@ import { AnimalsModule } from './modules/animals/animals.module'
 		ConfigModule.forRoot({
 			load: [systemConfig, databaseConfig, jwtConfig, cacheConfig],
 			isGlobal: true,
-			envFilePath: '.env'
+			envFilePath: '.env',
 		}),
 		CacheModule.registerAsync(cacheConfig()),
 		TypeOrmModule.forRoot(databaseConfig()),
@@ -34,7 +34,7 @@ import { AnimalsModule } from './modules/animals/animals.module'
 		forwardRef(() => CoreModule),
 
 		//Example Module
-		forwardRef(() => AnimalsModule)
+		forwardRef(() => AnimalsModule),
 	],
 	controllers: [],
 	providers: [Logger, Api, Poll, Query],

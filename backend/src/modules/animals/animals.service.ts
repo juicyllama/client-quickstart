@@ -1,7 +1,7 @@
 import { forwardRef, Inject, Injectable } from '@nestjs/common'
 import { InjectRepository } from '@nestjs/typeorm'
 import { Repository } from 'typeorm'
-import { BaseService, BeaconService, Query} from '@juicyllama/core'
+import { BaseService, BeaconService, Query } from '@juicyllama/core'
 import { Logger } from '@juicyllama/utils'
 import { Animal } from './animals.entity'
 

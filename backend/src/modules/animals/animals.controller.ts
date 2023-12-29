@@ -1,13 +1,4 @@
-import {
-	Controller,
-	forwardRef,
-	Inject,
-	Body,
-	Query,
-	Param,
-	Req,
-	UploadedFile
-} from '@nestjs/common'
+import { Controller, forwardRef, Inject, Body, Query, Param, Req, UploadedFile } from '@nestjs/common'
 import { AnimalsService as Service } from './animals.service'
 import {
 	Query as TQuery,
@@ -112,5 +103,4 @@ export class AnimalsController extends BaseController<T> {
 	async remove(@Req() req, @Param() params, @AccountId() account_id: number): Promise<T> {
 		return super.remove(req, params, account_id)
 	}
-
 }

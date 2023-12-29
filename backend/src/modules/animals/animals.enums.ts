@@ -1,4 +1,3 @@
-
 export enum AnimalType {
 	cat = 'cat',
 	dog = 'dog',
@@ -24,5 +23,5 @@ export enum AnimalsOrderBy {
 }
 
 export enum AnimalsRelations {
-	owner = 'owner'
+	owner = 'owner',
 }
