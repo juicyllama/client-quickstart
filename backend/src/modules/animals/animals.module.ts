@@ -1,11 +1,9 @@
 import { Module, forwardRef } from '@nestjs/common'
 import { TypeOrmModule } from '@nestjs/typeorm'
-import { JwtModule } from '@nestjs/jwt'
 import { Logger } from '@juicyllama/utils'
 import {
+	AuthModule,
 	BeaconModule,
-	databaseConfig,
-	jwtConfig,
 	Query,
 } from '@juicyllama/core'
 import { Animal } from './animals.entity'
@@ -14,9 +12,8 @@ import { AnimalsController } from './animals.controller'
 
 @Module({
 	imports: [
-		JwtModule.register(jwtConfig()),
-		TypeOrmModule.forRoot(databaseConfig()),
 		TypeOrmModule.forFeature([Animal]),
+		forwardRef(() => AuthModule),
 		forwardRef(() => BeaconModule),
 	],
 	controllers: [AnimalsController],

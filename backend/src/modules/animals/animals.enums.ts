@@ -4,6 +4,7 @@ export enum AnimalType {
 	dog = 'dog',
 	bird = 'bird',
 	fish = 'fish',
+	mouse = 'mouse',
 }
 
 export enum AnimalsSelect {

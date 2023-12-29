@@ -1,5 +1,9 @@
 import { IconSettings } from '@juicyllama/frontend-core'
 
+export function getIcon(name: string): string {
+	return iconSettings.icons[name] ?? name
+}
+
 export const iconSettings: IconSettings = {
 	type: '',
 	icons: {
@@ -16,5 +20,8 @@ export const iconSettings: IconSettings = {
 		home: 'house',
 		menu_seperator: 'chevron_right',
 		mobile_nav: 'menu',
+		dashboard: 'monitor'
 	},
 }
+
+

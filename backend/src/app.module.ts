@@ -3,7 +3,6 @@ import { CacheModule } from '@nestjs/cache-manager'
 import { ServeStaticModule } from '@nestjs/serve-static'
 import { join } from 'path'
 import {
-	AuthModule,
 	cacheConfig,
 	CoreModule,
 	databaseConfig,
@@ -12,7 +11,7 @@ import {
 	systemConfig,
 	Query,
 } from '@juicyllama/core'
-import { Api, Logger, Poll, Env } from '@juicyllama/utils'
+import { Api, Logger, Poll } from '@juicyllama/utils'
 import { JwtModule } from '@nestjs/jwt'
 import { ConfigModule } from '@nestjs/config'
 import { TypeOrmModule } from '@nestjs/typeorm'
@@ -32,7 +31,6 @@ import { AnimalsModule } from './modules/animals/animals.module'
 		ServeStaticModule.forRoot({
 			rootPath: join(__dirname, 'assets'),
 		}),
-		forwardRef(() => AuthModule),
 		forwardRef(() => CoreModule),
 
 		//Example Module
