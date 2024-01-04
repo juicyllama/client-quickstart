@@ -31,12 +31,10 @@
         "before:commit": "pnpm run lint && pnpm run format && pnpm run test && pnpm run build"
 	},
 	"dependencies": {
-		"@juicyllama/core": "latest",
-		"@juicyllama/utils": "latest"
-	},
-	"devDependencies": {
 		"@juicyllama/cli": "latest",
-		"@juicyllama/dev": "latest"
+		"@juicyllama/core": "latest",
+		"@juicyllama/dev": "latest",
+		"@juicyllama/utils": "latest"
 	},
 	"jl": {
 		"project_name": "quickstart",

@@ -46,13 +46,7 @@ async function bootstrap() {
 		logger.error(`[${domain}] ${e.message}`, e)
 	}
 
-	let port
-	if (Env.IsProd()) {
-		port = process.env.PORT || 3000
-	} else {
-		port = process.env.PORT_API
-	}
-
+	const port = Env.IsProd() ? process.env.PORT || 3000 : process.env.PORT_API
 	app.listen(port)
 	logger.debug(`[${domain}]${Env.get()} server running: ${process.env.BASE_URL_API}`)
 }
