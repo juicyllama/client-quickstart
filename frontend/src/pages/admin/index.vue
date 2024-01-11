@@ -1,36 +1,44 @@
 <script lang="ts" setup>
 import { goToAdminUsers, goToEditAccount } from '@juicyllama/frontend-core'
 import { useRouter } from 'vue-router'
-import { iconSettings } from '@/config/icons'
+import { getIcon } from '@/config/icons'
 
+const iconSize = '3em'
 const router = useRouter()
 const goEditAccount = () => goToEditAccount(router)
 const goAdminUsers = () => goToAdminUsers(router)
+
+const settings = [
+	{
+		icon: 'account',
+		label: 'Account Settings',
+		action: goEditAccount,
+	},
+	{
+		icon: 'users',
+		label: 'Manage Users',
+		action: goAdminUsers,
+	},
+]
+
 </script>
 
 <template>
 	<div class='main'>
 
-		<div class="row" >
-			<div class="col-4 q-pl-md q-pr-md">
-				<q-card class='q-pa-lg justify-center cursor-pointer' @click='goEditAccount'>
-					<q-card-section class='flex flex-center'>
-						<q-icon name="fa-duotone fa-screwdriver-wrench" color="primary" size="5em"/>
-					</q-card-section>
-					<q-card-actions class='flex flex-center'>
-						<q-btn flat>Account Settings</q-btn>
-					</q-card-actions>
-				</q-card>
-			</div>
-			<div class="col-4 q-pl-md q-pr-md">
-				<q-card class='q-pa-lg justify-center cursor-pointer' @click='goAdminUsers'>
-					<q-card-section class='flex flex-center'>
-						<q-icon :name="iconSettings?.icons?.users ? `${iconSettings.type} ${iconSettings.icons.users}` : 'people'" color="primary" size="5em"/>
-					</q-card-section>
-					<q-card-actions class='flex flex-center'>
-						<q-btn flat>Manage Users</q-btn>
-					</q-card-actions>
-				</q-card>
+		<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 ">
+	
+			<div v-for="setting in settings" :key="setting.icon">
+				<a href="#" @click='setting.action'>
+					<q-card class='q-pa-lg justify-center cursor-pointer' @click='setting.action'>
+						<q-card-section class='flex flex-center'>
+							<q-icon :name="getIcon(setting.icon)" color="primary" :size="iconSize"/>
+						</q-card-section>
+						<q-card-actions class='flex flex-center'>
+							<p class="text-primary uppercase">{{ setting.label }}</p>
+						</q-card-actions>
+					</q-card>
+				</a>
 			</div>
 		</div>
 	</div>

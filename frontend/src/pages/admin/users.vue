@@ -1,28 +1,14 @@
 <script lang="ts" setup>
-import { JLUsersTable, goToAdmin } from '@juicyllama/frontend-core'
-import { useRouter } from 'vue-router'
+import { JLUsersTable } from '@juicyllama/frontend-core'
 import { iconSettings } from '@/config/icons'
-
-const router = useRouter()
-const goAdmin = () => goToAdmin(router)
+import { formSettings } from '@/config/forms'
+const visibleColumns = ['user_id', 'first_name', 'last_name', 'email', 'roles', 'last_login_at']
 </script>
 
 <template>
 	<div class="q-pa-md">
-
-		<q-breadcrumbs class="text-grey q-pl-lg q-pa-sm" active-color="primary">
-			<template v-slot:separator>
-				<q-icon
-					:name="iconSettings?.icons?.menu_seperator ? `${iconSettings.type} ${iconSettings.icons.menu_seperator}` : 'chevron_right'"
-				/>
-			</template>
-
-			<q-breadcrumbs-el label="Settings" :icon="iconSettings?.icons?.settings ? `${iconSettings.type} ${iconSettings.icons.settings}` : 'cog'" @click='goAdmin' class='cursor-pointer' />
-			<q-breadcrumbs-el label="Users" :icon="iconSettings?.icons?.users ? `${iconSettings.type} ${iconSettings.icons.users}` : 'people'" />
-		</q-breadcrumbs>
-
 		<Suspense>
-			<JLUsersTable></JLUsersTable>
+			<JLUsersTable :visibleColumns='visibleColumns' :icon='iconSettings' :form-settings='formSettings'></JLUsersTable>
 		</Suspense>
 	</div>
 </template>

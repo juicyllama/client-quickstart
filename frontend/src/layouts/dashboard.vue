@@ -23,7 +23,7 @@ const router = useRouter()
 await AuthHook(router, route)
 
 const currentRoute = computed(() => {
-	return useRoute().name
+	return route.name
 })
 
 const isAdmin = userStore.isAdmin(router, route, accountStore.getAccountId)

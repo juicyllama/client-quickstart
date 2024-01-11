@@ -10,14 +10,12 @@ import '@/css/quasar.extra.css'
 import { version } from '../../package.json'
 
 export default boot(async ({ app }) => {
-
 	const comment = document.createComment(`App version: ${version}`)
 	document.body.appendChild(comment)
 
 	const pinia = createPinia()
 
-	app.use(JLCore, { $pinia: pinia })
-		.use(pinia)
+	app.use(JLCore, { $pinia: pinia }).use(pinia)
 
 	instance.defaults.baseURL = process.env.VITE_API_BASE_URL
 })

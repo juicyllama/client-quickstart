@@ -20,8 +20,6 @@ export const iconSettings: IconSettings = {
 		home: 'house',
 		menu_seperator: 'chevron_right',
 		mobile_nav: 'menu',
-		dashboard: 'monitor'
+		dashboard: 'monitor',
 	},
 }
-
-

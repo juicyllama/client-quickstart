@@ -27,7 +27,6 @@ export class ClientBillingChargesService extends Api<T> {
 	}
 
 	async logHours(options: { formData: ClientBillingHours; q?: QVueGlobals }): Promise<T> {
-
 		options.formData.hours = Number(options.formData.hours)
 
 		return apiRequest<T>({
