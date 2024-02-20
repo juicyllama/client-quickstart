@@ -16,6 +16,7 @@ import { JwtModule } from '@nestjs/jwt'
 import { ConfigModule } from '@nestjs/config'
 import { TypeOrmModule } from '@nestjs/typeorm'
 import { AnimalsModule } from './modules/animals/animals.module'
+import { AppController } from './app.controller';
 
 @Module({
 	imports: [
@@ -36,7 +37,7 @@ import { AnimalsModule } from './modules/animals/animals.module'
 		//Example Module
 		forwardRef(() => AnimalsModule),
 	],
-	controllers: [],
+	controllers: [AppController],
 	providers: [Logger, Api, Poll, Query],
 })
 export class AppModule {}
